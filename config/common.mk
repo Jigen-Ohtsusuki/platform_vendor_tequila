@@ -212,7 +212,7 @@ PRODUCT_PACKAGES += \
     Launcher3Overlay
 
 # Updater
-ifneq ($(filter OFFICIAL EXPERIMENTAL,$(TEQUILA_BUILDTYPE)),)
+ifneq ($(filter OFFICIAL,$(TEQUILA_BUILDTYPE)),)
 PRODUCT_PACKAGES += \
     Updater
 endif
@@ -224,3 +224,4 @@ $(call inherit-product, vendor/google/pixel/config.mk)
  include vendor/tequila/config/bootanimation.mk
  # RRO Overlays
 $(call inherit-product, vendor/tequila/config/rro_overlays.mk)
+$(call inherit-product, vendor/addons/addons.mk)
